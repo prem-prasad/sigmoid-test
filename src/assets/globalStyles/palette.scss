@@ -1,0 +1,67 @@
+// Basic
+$white: #ffffff;
+$black: #000000;
+$dark-grey: #aaaaaa;
+$grey: #cccccc;
+
+// Primary
+$darkest: #001834;
+$darker: #0c2d54;
+$dark: #427fc7;
+$light: #a9c7dd;
+$lighter: #dbeff4;
+$lightest: #ecf6f9;
+
+// Secondary
+$accent: #00a1bd;
+$accent-light: #31cae4;
+$accent-dark: #007094;
+$accent-error: #ff4e5e;
+$accent-success: #6ed16f;
+$accent-warning: #ffce63;
+
+// Data visualization
+$datavis-1: #474f85;
+$datavis-2: #51e3d4;
+$datavis-3: #f3ecd3;
+$datavis-4: #17b3c1;
+$datavis-5: #bff8d4;
+$datavis-6: #f3f9fb;
+
+// Misc
+$input-bg: #f2f2f2;
+$insight-1: #68e1f9;
+$insight-2: #00aad8;
+
+// Export for using variables in JS files
+:export {
+  white: $white;
+  black: $black;
+  dark-grey: $dark-grey;
+  grey: $grey;
+
+  darkest: $darkest;
+  darker: $darker;
+  dark: $dark;
+  light: $light;
+  lighter: $lighter;
+  lightest: $lightest;
+
+  accent: $accent;
+  accent-light: $accent-light;
+  accent-dark: $accent-dark;
+  accent-error: $accent-error;
+  accent-success: $accent-success;
+  accent-warning: $accent-warning;
+
+  datavis-1: $datavis-1;
+  datavis-2: $datavis-2;
+  datavis-3: $datavis-3;
+  datavis-4: $datavis-4;
+  datavis-5: $datavis-5;
+  datavis-6: $datavis-6;
+
+  input-bg: $input-bg;
+  insight-1: $insight-1;
+  insight-2: $insight-2;
+}

@@ -1,0 +1,55 @@
+@import '../../../assets/globalStyles/palette';
+
+.login-container {
+  display: grid;
+  height: calc(100vh - 130px);
+  max-width: 475px;
+  margin: 0 auto;
+}
+
+.login-form-container {
+  display: grid;
+  place-self: center;
+  grid-gap: 20px;
+  width: 100%;
+
+  h1 {
+    align-self: flex-start;
+    font-size: 2.55rem;
+  }
+  .header {
+    color: white;
+    font-size: 22px;
+    text-align: left;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .forgot {
+    text-align: right !important;
+  }
+  .sign-up {
+    text-align: center;
+  }
+}
+
+.login-form {
+  align-self: start;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-rows: repeat(3, 50px) 40px;
+
+  a {
+    text-decoration: none;
+    text-align: end;
+    color: $dark;
+  }
+
+  .MuiInputBase-root,
+  .MuiInputBase-root,
+  .MuiFilledInput-root:hover,
+  .Mui-focused,
+  .Mui-disabled {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
