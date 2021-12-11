@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sigmoid-test/static/css/main.5c74b649.chunk.css",
+    "main.js": "/sigmoid-test/static/js/main.ea14c172.chunk.js",
+    "main.js.map": "/sigmoid-test/static/js/main.ea14c172.chunk.js.map",
+    "runtime-main.js": "/sigmoid-test/static/js/runtime-main.d707c704.js",
+    "runtime-main.js.map": "/sigmoid-test/static/js/runtime-main.d707c704.js.map",
+    "static/js/2.1ce49764.chunk.js": "/sigmoid-test/static/js/2.1ce49764.chunk.js",
+    "static/js/2.1ce49764.chunk.js.map": "/sigmoid-test/static/js/2.1ce49764.chunk.js.map",
+    "static/js/3.5f4cc4b7.chunk.js": "/sigmoid-test/static/js/3.5f4cc4b7.chunk.js",
+    "static/js/3.5f4cc4b7.chunk.js.map": "/sigmoid-test/static/js/3.5f4cc4b7.chunk.js.map",
+    "index.html": "/sigmoid-test/index.html",
+    "static/css/main.5c74b649.chunk.css.map": "/sigmoid-test/static/css/main.5c74b649.chunk.css.map",
+    "static/js/2.1ce49764.chunk.js.LICENSE.txt": "/sigmoid-test/static/js/2.1ce49764.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d707c704.js",
+    "static/js/2.1ce49764.chunk.js",
+    "static/css/main.5c74b649.chunk.css",
+    "static/js/main.ea14c172.chunk.js"
+  ]
+}
