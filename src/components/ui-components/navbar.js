@@ -13,7 +13,6 @@ import {logout} from "thunks/auth"
 const Navbar = (props) => {
     const [isLogIn, setIsLogIn]=useState(false)
     useEffect(()=>{
-        console.log("hhhbbbbbbbbbbbbbbhcfffffffffffff")
         localStorage.isLoggedIn==='true'?setIsLogIn(true):setIsLogIn(false)
     },[localStorage.isLoggedIn])
     const history =useHistory()
@@ -26,7 +25,7 @@ const Navbar = (props) => {
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             size="large"

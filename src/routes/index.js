@@ -20,6 +20,7 @@ const AppRoutes = () => {
 
   return (
     <Router history={history}>
+      <Switch>
       <FullLayout>
         <ProtectedRoute exact path="/" component={Dashboard} />
         <Route path="/login" exact component={Login} />
@@ -28,7 +29,7 @@ const AppRoutes = () => {
           exact
           path="/sign-out"
           render={(props) => {
-            dispatch(logout());
+            dispatch(logout(history));
             return (
               <Redirect
                 to={{
@@ -43,6 +44,7 @@ const AppRoutes = () => {
         />
         <Redirect to="/" />
       </FullLayout>
+      </Switch>
     </Router>
   );
 };

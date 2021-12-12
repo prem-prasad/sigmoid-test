@@ -5,9 +5,10 @@
   display: grid;
   grid-gap: 30px;
   .date-range {
-    display: grid;
+    display: flex;
+    // justify-content: space-evenly;
     padding: 56px 0px;
-    grid-gap: 30px;
+    gap: 30px;
     justify-content: center;
     background-color: $lightest;
     .calendar {
@@ -21,23 +22,37 @@
   }
   .charts {
     background-color: $lightest;
-
+    padding: 20px;
     display: grid;
     grid-gap: 30px;
     .combined-charts {
-        display: grid;
-    grid-template-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
       .pie-chart {
+        padding: 16px;
+      background-color: $lighter;
 
+        border: solid 2px $dark;
       }
       .bar-chart {
+      background-color: $lighter;
 
+        padding: 16px;
+        border: solid 2px $dark;
       }
     }
     .table-chart {
-        width: 800px;
-    display: flex;
-    justify-self: center;
+    //   width: 100%;
+      padding: 16px;
+      border: solid 2px $dark;
+      background-color: $lighter;
+      .table-paper{
+          width: 85%;
+          margin: 0 auto;
+      }
+    //   display: flex;
+    //   justify-self: center;
     }
   }
 }
