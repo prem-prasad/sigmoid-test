@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import jwt from 'jsonwebtoken';
+import { login } from 'thunks/auth';
 
 // MaterialUI
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,34 +36,32 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
   const [authFailed, setAuthFailed] = useState(false);
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const { loginError, loginInAction, isLoggedIn } = useSelector((state) => ({
+    loginError: state.auth.loginError,
+    loginInAction: state.auth.loginInAction,
+    isLoggedIn: state.auth.isLoggedIn
+  }));
 
-  const secret = process.env.REACT_APP_JWT_SECRET;
-  const generateAuthToken = () => {
-    return jwt.sign(
-      {
-        username
-      },
-      secret,
-      { expiresIn: '24h' }
-    );
-  };
+  useEffect(() => {
+    if (Boolean(loginError.length)) setAuthFailed(true);
+  }, [loginInAction]);
+
+  useEffect(() => {
+    if (localStorage.isLoggedIn==="true") props.history.push('/');
+  }, [localStorage.isLoggedIn]);
 
   const onSubmit = (event) => {
     event.preventDefault();
-
-    // Replace password with env variable
-    if (username === 'admin' && password === process.env.REACT_APP_PASS) {
-      // Save token in localStorage
-      localStorage.setItem('user_token', generateAuthToken());
-      // Push to home
-      props.history.push('/');
-    } else {
-      setAuthFailed(true);
-    }
-
+    const payload = {
+      email: username,
+      password: password,
+      rememberMe: true
+    };
+    dispatch(login(payload));
     // Clear form
-    setUsername('');
-    setPassword('');
+    // setUsername('');
+    // setPassword('');
   };
 
   return (
@@ -109,7 +109,7 @@ const Login = (props) => {
           autoHideDuration={2000}
           onClose={(e) => setAuthFailed(false)}>
           <Alert variant="filled" severity="error">
-            Wrong username or password, please try again.
+            {loginError}
           </Alert>
         </Snackbar>
       </div>

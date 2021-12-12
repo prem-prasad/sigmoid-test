@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
-import gateway from './gateway';
+import auth from './auth';
+import dashboard from './dashboard';
+
 
 const appReducer = combineReducers({
-  gateway
+  auth,
+  dashboard
 });
 
 const root_reducer = (state, action) => {

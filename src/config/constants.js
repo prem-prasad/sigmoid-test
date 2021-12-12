@@ -1,38 +1,132 @@
-export const LOCAL_BASE_URL = `${process.env.REACT_APP_API_URL}/v1/`;
+export const LOGIN_BASE_URL = `${process.env.REACT_APP_API_URL}/`;
+export const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api/v1/`;
 
-export const homepageConstant = {
-  title: 'Home',
-  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
-    diam ac venenatis malesuada. Donec efficitur purus sapien, at rhoncus
-    nulla scelerisque sit amet. Aliquam euismod sodales ex non dictum.
-    Cras dolor ligula, commodo sed sem quis, eleifend efficitur velit.
-    Pellentesque hendrerit nunc est, nec fermentum enim porta ut. Nunc
-    facilisis dignissim porttitor. Aliquam tempus velit vitae imperdiet
-    venenatis. Duis semper tempor justo, et sodales est pellentesque
-    imperdiet. Cras sodales faucibus nunc, vel vehicula magna. Proin arcu
-    arcu, porta non quam in, ornare suscipit dui. Vestibulum varius augue
-    ut elit faucibus, tincidunt tempus tortor imperdiet. Donec eu lorem
-    interdum, sagittis arcu eu, efficitur augue. In pulvinar leo in dictum
-    ornare. Duis nec nulla id nisl iaculis placerat. Quisque fermentum
-    eros vel fringilla sollicitudin. Nunc quis justo tincidunt, elementum
-    arcu id, elementum orci. Proin non leo eleifend, congue lacus eget,
-    tempor sapien. Donec felis erat, dictum ut mattis tempus, porta vel
-    tortor. Integer dignissim, metus ac malesuada dignissim, lectus ante
-    hendrerit orci, in viverra nisl lectus nec nisi. Sed auctor nisi dui,
-    et molestie mauris laoreet vitae. Quisque in lorem ac est rhoncus
-    lobortis. Ut luctus quam elementum congue posuere. Nulla nibh massa,
-    molestie ut nisi non, auctor sollicitudin dolor. Cras vitae mauris
-    ligula. Ut ultrices eleifend rutrum.`,
-  buttons: [
-    {
-      id: 0,
-      text: 'Gateway',
-      redirectTo: '/gateway'
+export const table_payload = {
+  _id: 'dashboard1516252439345',
+  emailId: 'candidate@sigmoid.com',
+  orgViewReq: {
+    organization: 'DemoTest',
+    view: 'Auction'
+  },
+  chartObject: {
+    metadata: {
+      title: 'chartobject:1516252439345',
+      img_thumbnail: '../img/chart.png',
+      chartType: 'table',
+      dataLimit: 50
     },
-    {
-      id: 1,
-      text: 'Sensor',
-      redirectTo: '/sensor'
+    requestParam: {
+      granularity: 'hour',
+      timeZone: {
+        name: 'UTC (+00:00)',
+        location: 'UTC'
+      },
+      dateRange: {
+        startDate: '1493337600000',
+        endDate: '1493510400000'
+      },
+      xAxis: ['D044'],
+      yAxis: ['M002'],
+      approxCountDistinct: [],
+      specialCalculation: [],
+      filter: [],
+      orderBy: {
+        metricOrdByList: [
+          {
+            id: 'M002',
+            desc: true
+          }
+        ]
+      },
+      percentCalList: []
     }
-  ]
+  }
+};
+export const bar_payload = {
+  _id: 'dashboard1516252235693',
+  emailId: 'candidate@sigmoid.com',
+  orgViewReq: {
+    organization: 'DemoTest',
+    view: 'Auction'
+  },
+  chartObject: {
+    metadata: {
+      title: 'chartobject:1516252235693',
+      img_thumbnail: '../img/chart.png',
+      chartType: 'bar',
+      dataLimit: 50
+    },
+    requestParam: {
+      granularity: 'hour',
+      timeZone: {
+        name: 'UTC (+00:00)',
+        location: 'UTC'
+      },
+      dateRange: {
+        startDate: '1493337600000',
+        endDate: '1493510400000'
+      },
+      xAxis: ['D017'],
+      yAxis: ['M002'],
+      approxCountDistinct: [],
+      specialCalculation: [],
+      filter: [],
+      orderBy: {
+        metricOrdByList: [
+          {
+            id: 'M002',
+            desc: true
+          }
+        ]
+      },
+      percentCalList: []
+    }
+  }
+};
+
+export const pie_payload = {
+  _id: 'Datastory_ChartId_1535224664111',
+  emailId: 'candidate@sigmoid.com',
+  orgViewReq: {
+    organization: 'DemoTest',
+    view: 'Auction'
+  },
+  chartObject: {
+    metadata: {
+      title: '',
+      img_thumbnail: 'images/pie.png',
+      chartType: 'pie',
+      dataLimit: 500
+    },
+    text: [],
+    requestParam: {
+      granularity: 'hour',
+      timeZone: {
+        name: 'UTC (+00:00)',
+        location: 'UTC'
+      },
+      dateRange: {
+        startDate: '1493424000000',
+        endDate: '1493596800000'
+      },
+      xAxis: ['D005'],
+      yAxis: [],
+      approxCountDistinct: [],
+      specialCalculation: ['CM001'],
+      filter: [],
+      orderBy: {
+        customMetricOrdByList: [
+          {
+            id: 'CM001',
+            desc: true
+          }
+        ]
+      },
+      percentCalList: [
+        {
+          id: 'CM001'
+        }
+      ]
+    }
+  }
 };
