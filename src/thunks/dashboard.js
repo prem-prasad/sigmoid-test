@@ -6,11 +6,9 @@ import {
 } from '../queries/dashboard';
 
 export const fetchDateRange = (payload) => async (dispatch) => {
-  console.log('payload: ', payload);
   dispatch({ type: 'FETHING_DATE_RANGE_INITIATED' });
   try {
     const response = await getDateRange(payload);
-    console.log('response: ', response);
 
     if (response.status === 200) {
       const convertedDateResponse = {
@@ -40,7 +38,6 @@ export const fetchDateRange = (payload) => async (dispatch) => {
 };
 
 export const fetchTableData = (payload) => async (dispatch) => {
-  console.log('payload: ', payload);
   dispatch({ type: 'FETHING_TABLE_DATA_INITIATED' });
   try {
     const response = await getTableData(payload);
@@ -75,11 +72,9 @@ export const fetchTableData = (payload) => async (dispatch) => {
 };
 
 export const fetchPieData = (payload) => async (dispatch) => {
-  console.log('payload: ', payload);
   dispatch({ type: 'FETHING_PIE_DATA_INITIATED' });
   try {
     const response = await getPieData(payload);
-    console.log('response: ', response);
 
     if (response.status === 200) {
       const processedData = response.data.result.data.map((d) => {
@@ -112,7 +107,6 @@ export const fetchPieData = (payload) => async (dispatch) => {
 };
 
 export const fetchBarData = (payload) => async (dispatch) => {
-  console.log('payload: ', payload);
   dispatch({ type: 'FETHING_BAR_DATA_INITIATED' });
   try {
     const response = await getBarData(payload);

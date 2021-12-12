@@ -13,7 +13,7 @@ import { logout } from 'thunks/auth';
 import Login from 'screens/Auth/Login';
 import Dashboard from 'screens/dashboard';
 import FullLayout from 'layout/fullLayout';
-const history = createBrowserHistory({ basename: '/sigmoid-test' });
+const history = createBrowserHistory();
 
 const AppRoutes = () => {
   const dispatch = useDispatch();

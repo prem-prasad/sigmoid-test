@@ -1,10 +1,5 @@
 @import 'assets/globalStyles/palette';
 
-
-#root{
-    background-color: $darkest;
-      height: 100%;
-  }
 .dashboard-container {
   padding: 30px;
   display: grid;
@@ -53,6 +48,9 @@
       .table-paper{
           width: 85%;
           margin: 0 auto;
+          .table-header{
+              font-weight: bold;
+          }
       }
     //   display: flex;
     //   justify-self: center;

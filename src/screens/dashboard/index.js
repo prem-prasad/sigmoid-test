@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import jwt from 'jsonwebtoken';
 import {
   fetchDateRange,
   fetchBarData,
@@ -11,7 +10,6 @@ import {
 // MaterialUI
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, TextField, Snackbar } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
 import Calendar from 'containers/dashboard/Calendar';
 import PieChartComp from 'containers/dashboard/PieChart';
 import BarChart from 'containers/dashboard/BarChart';
@@ -76,7 +74,6 @@ const Dashboard = (props) => {
     dispatch(fetchDateRange(payload));
   }, []);
 
-  console.log('value: ', value);
 
   useEffect(() => {
     Object.values(dateRange).length &&

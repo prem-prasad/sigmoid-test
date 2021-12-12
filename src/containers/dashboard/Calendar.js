@@ -7,8 +7,6 @@ import Stack from '@mui/material/Stack';
 import DesktopDateRangePicker from '@mui/lab/DesktopDateRangePicker';
 
 export default function ResponsiveDateRangePicker({ value, setValue, dateRange }) {
-  //   const [value, setValue] = React.useState([null, null]);
-  console.log(value)
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>

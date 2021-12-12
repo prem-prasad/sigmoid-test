@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 }
-];
-
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
   const {
@@ -85,7 +78,6 @@ const PieChartComp = ({pieData}) => {
   const onPieEnter = (_, index) => {
     setActiveIndex(index);
   };
-  console.log("pieData: ", pieData)
 
   return (
       <div style={{width: "100%" , height: "450px"}}>
