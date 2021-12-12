@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sigmoid-test/static/css/main.3b4d5ed5.chunk.css",
-    "main.js": "/sigmoid-test/static/js/main.5395fcd6.chunk.js",
-    "main.js.map": "/sigmoid-test/static/js/main.5395fcd6.chunk.js.map",
+    "main.js": "/sigmoid-test/static/js/main.35f9995c.chunk.js",
+    "main.js.map": "/sigmoid-test/static/js/main.35f9995c.chunk.js.map",
     "runtime-main.js": "/sigmoid-test/static/js/runtime-main.fc382429.js",
     "runtime-main.js.map": "/sigmoid-test/static/js/runtime-main.fc382429.js.map",
     "static/js/2.4f14376b.chunk.js": "/sigmoid-test/static/js/2.4f14376b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fc382429.js",
     "static/js/2.4f14376b.chunk.js",
     "static/css/main.3b4d5ed5.chunk.css",
-    "static/js/main.5395fcd6.chunk.js"
+    "static/js/main.35f9995c.chunk.js"
   ]
 }
