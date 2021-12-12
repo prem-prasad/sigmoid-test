@@ -6,45 +6,44 @@ import {
   Redirect,
   Route
 } from 'react-router-dom';
-import { createBrowserHistory } from 'history'
+import { createBrowserHistory } from 'history';
 import ProtectedRoute from './ProtectedRoute';
 import { logout } from 'thunks/auth';
 //Importing Components
 import Login from 'screens/Auth/Login';
 import Dashboard from 'screens/dashboard';
-import FullLayout from 'layout/fullLayout'
+import FullLayout from 'layout/fullLayout';
+const history = createBrowserHistory({ basename: '/sigmoid-test' });
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
 
   return (
-      <Router>
-            <FullLayout>
+    <Router history={history}>
+      <FullLayout>
+        <ProtectedRoute exact path="/" component={Dashboard} />
+        <Route path="/login" exact component={Login} />
 
-          <ProtectedRoute exact path="/" component={Dashboard} />
-          <Route path="/login" exact component={Login} />
-
-          <Route
-            exact
-            path="/sign-out"
-            render={(props) => {
-              dispatch(logout());
-              return (
-                <Redirect
-                  to={{
-                    pathname: '/login',
-                    state: {
-                      from: props.location
-                    }
-                  }}
-                />
-              );
-            }}
-          />
-          <Redirect to="/" />
-          </FullLayout>
-
-      </Router>
+        <Route
+          exact
+          path="/sign-out"
+          render={(props) => {
+            dispatch(logout());
+            return (
+              <Redirect
+                to={{
+                  pathname: '/login',
+                  state: {
+                    from: props.location
+                  }
+                }}
+              />
+            );
+          }}
+        />
+        <Redirect to="/" />
+      </FullLayout>
+    </Router>
   );
 };
 
