@@ -5,10 +5,10 @@ import {
   getTableData
 } from '../queries/dashboard';
 
-export const fetchDateRange = (payload) => async (dispatch) => {
+export const fetchDateRange = (payload, user_token) => async (dispatch) => {
   dispatch({ type: 'FETHING_DATE_RANGE_INITIATED' });
   try {
-    const response = await getDateRange(payload);
+    const response = await getDateRange(payload, user_token);
 
     if (response.status === 200) {
       const convertedDateResponse = {

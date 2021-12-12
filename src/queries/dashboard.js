@@ -3,11 +3,11 @@ import { API_BASE_URL } from 'config/constants';
 
 const auth_token = localStorage.user_token;
 
-export const getDateRange = (payload) => {
+export const getDateRange = (payload, user_token) => {
   return axios
     .post(`${API_BASE_URL}getDateRange`, payload, {
       headers: {
-        'x-auth-token': auth_token
+        'x-auth-token': user_token
       }
     })
     .then((response) => response)

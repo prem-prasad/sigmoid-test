@@ -72,8 +72,9 @@ const Login = (props) => {
           <TextField
             classes={{ root: classes.root }}
             value={username}
+            required
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
+            placeholder="Email"
             InputLabelProps={{
               shrink: true
             }}
@@ -84,6 +85,7 @@ const Login = (props) => {
             classes={{ root: classes.root }}
             disabled={!username}
             type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"

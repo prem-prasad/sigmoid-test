@@ -65,15 +65,14 @@ const Dashboard = (props) => {
 
   const classes = useStyles();
   const dispatch = useDispatch();
-
+  const user_token = localStorage.user_token;
   useEffect(() => {
     const payload = {
       organization: 'DemoTest',
       view: 'Auction'
     };
-    dispatch(fetchDateRange(payload));
-  }, []);
-
+    user_token && dispatch(fetchDateRange(payload, user_token));
+  }, [user_token]);
 
   useEffect(() => {
     Object.values(dateRange).length &&
@@ -85,6 +84,7 @@ const Dashboard = (props) => {
       startDate: `${new Date(value[0]).getTime()}`,
       endDate: `${new Date(value[1]).getTime()}`
     };
+      
     table_payload.chartObject.requestParam.dateRange = dateObj;
     bar_payload.chartObject.requestParam.dateRange = dateObj;
     pie_payload.chartObject.requestParam.dateRange = dateObj;
@@ -134,28 +134,28 @@ const Dashboard = (props) => {
             type="button"
             variant="contained"
             color="primary"
+            disabled={new Date(value[0]).getTime() < new Date(dateRange.startDate).getTime() ||
+              new Date(value[1]).getTime() > new Date(dateRange.endDate).getTime()}
             onClick={handleClick}>
             VIEW DASHBOARD
           </Button>
         </div>
       </div>
-        {isClicked ? (
-      <div className="charts">
-          
-            <div className="combined-charts">
-              <div className="pie-chart">
-                <RenderPieChart />
-              </div>
-              <div className="bar-chart">
-                <RenderBarChart />
-              </div>
+      {isClicked ? (
+        <div className="charts">
+          <div className="combined-charts">
+            <div className="pie-chart">
+              <RenderPieChart />
             </div>
-            <div className="table-chart">
-              <RenderTableChart />
+            <div className="bar-chart">
+              <RenderBarChart />
             </div>
-            </div>
-
-        ) : null}
+          </div>
+          <div className="table-chart">
+            <RenderTableChart />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
