@@ -63,6 +63,7 @@ const Dashboard = (props) => {
     pieDataInAction: state.dashboard.pieDataInAction
   }));
   const [value, setValue] = useState([dateRange.startDate, dateRange.endDate]);
+  const [isClicked, setIsClicked] = useState(false);
 
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -93,6 +94,7 @@ const Dashboard = (props) => {
     dispatch(fetchTableData(table_payload));
     dispatch(fetchBarData(bar_payload));
     dispatch(fetchPieData(pie_payload));
+    setIsClicked(true);
   };
 
   if (dateRangeInAction) {
@@ -140,19 +142,23 @@ const Dashboard = (props) => {
           </Button>
         </div>
       </div>
+        {isClicked ? (
       <div className="charts">
-          <div className="combined-charts">
-        <div className="pie-chart">
-          <RenderPieChart />
-        </div>
-        <div className="bar-chart">
-          <RenderBarChart />
-        </div>
-        </div>
-        <div className="table-chart">
-          <RenderTableChart />
-        </div>
-      </div>
+          
+            <div className="combined-charts">
+              <div className="pie-chart">
+                <RenderPieChart />
+              </div>
+              <div className="bar-chart">
+                <RenderBarChart />
+              </div>
+            </div>
+            <div className="table-chart">
+              <RenderTableChart />
+            </div>
+            </div>
+
+        ) : null}
     </div>
   );
 };

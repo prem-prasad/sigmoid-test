@@ -2,9 +2,11 @@
 
 .login-container {
   display: grid;
-  height: calc(100vh - 130px);
+  // margin-top: 120px;
   max-width: 475px;
   margin: 0 auto;
+  height: 100vh;
+  place-self: center;
 }
 
 .login-form-container {
