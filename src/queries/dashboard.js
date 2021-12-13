@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { API_BASE_URL } from 'config/constants';
 
-const auth_token = localStorage.user_token;
-
 export const getDateRange = (payload, user_token) => {
   return axios
     .post(`${API_BASE_URL}getDateRange`, payload, {
@@ -14,33 +12,33 @@ export const getDateRange = (payload, user_token) => {
     .catch((err) => err.response);
 };
 
-export const getBarData = (payload) => {
+export const getBarData = (payload, user_token) => {
   return axios
     .post(`${API_BASE_URL}getData`, payload, {
       headers: {
-        'x-auth-token': auth_token
+        'x-auth-token': user_token
       }
     })
     .then((response) => response)
     .catch((err) => err.response);
 };
 
-export const getTableData = (payload) => {
+export const getTableData = (payload, user_token) => {
   return axios
     .post(`${API_BASE_URL}getData`, payload, {
       headers: {
-        'x-auth-token': auth_token
+        'x-auth-token': user_token
       }
     })
     .then((response) => response)
     .catch((err) => err.response);
 };
 
-export const getPieData = (payload) => {
+export const getPieData = (payload, user_token) => {
   return axios
     .post(`${API_BASE_URL}getData`, payload, {
       headers: {
-        'x-auth-token': auth_token
+        'x-auth-token': user_token
       }
     })
     .then((response) => response)

@@ -37,10 +37,10 @@ export const fetchDateRange = (payload, user_token) => async (dispatch) => {
   }
 };
 
-export const fetchTableData = (payload) => async (dispatch) => {
+export const fetchTableData = (payload, user_token) => async (dispatch) => {
   dispatch({ type: 'FETHING_TABLE_DATA_INITIATED' });
   try {
-    const response = await getTableData(payload);
+    const response = await getTableData(payload, user_token);
 
     if (response.status === 200) {
       const processedData = response.data.result.data.map((d) => {
@@ -71,10 +71,10 @@ export const fetchTableData = (payload) => async (dispatch) => {
   }
 };
 
-export const fetchPieData = (payload) => async (dispatch) => {
+export const fetchPieData = (payload, user_token) => async (dispatch) => {
   dispatch({ type: 'FETHING_PIE_DATA_INITIATED' });
   try {
-    const response = await getPieData(payload);
+    const response = await getPieData(payload, user_token);
 
     if (response.status === 200) {
       const processedData = response.data.result.data.map((d) => {
@@ -106,10 +106,10 @@ export const fetchPieData = (payload) => async (dispatch) => {
   }
 };
 
-export const fetchBarData = (payload) => async (dispatch) => {
+export const fetchBarData = (payload, user_token) => async (dispatch) => {
   dispatch({ type: 'FETHING_BAR_DATA_INITIATED' });
   try {
-    const response = await getBarData(payload);
+    const response = await getBarData(payload, user_token);
 
     if (response.status === 200) {
       const processedData = response.data.result.data.map((d) => {

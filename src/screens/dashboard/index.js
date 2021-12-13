@@ -84,13 +84,13 @@ const Dashboard = (props) => {
       startDate: `${new Date(value[0]).getTime()}`,
       endDate: `${new Date(value[1]).getTime()}`
     };
-      
+
     table_payload.chartObject.requestParam.dateRange = dateObj;
     bar_payload.chartObject.requestParam.dateRange = dateObj;
     pie_payload.chartObject.requestParam.dateRange = dateObj;
-    dispatch(fetchTableData(table_payload));
-    dispatch(fetchBarData(bar_payload));
-    dispatch(fetchPieData(pie_payload));
+    dispatch(fetchTableData(table_payload, user_token));
+    dispatch(fetchBarData(bar_payload, user_token));
+    dispatch(fetchPieData(pie_payload, user_token));
     setIsClicked(true);
   };
 
@@ -134,8 +134,12 @@ const Dashboard = (props) => {
             type="button"
             variant="contained"
             color="primary"
-            disabled={new Date(value[0]).getTime() < new Date(dateRange.startDate).getTime() ||
-              new Date(value[1]).getTime() > new Date(dateRange.endDate).getTime()}
+            disabled={
+              new Date(value[0]).getTime() <
+                new Date(dateRange.startDate).getTime() ||
+              new Date(value[1]).getTime() >
+                new Date(dateRange.endDate).getTime()
+            }
             onClick={handleClick}>
             VIEW DASHBOARD
           </Button>
@@ -144,20 +148,14 @@ const Dashboard = (props) => {
       {isClicked ? (
         <div className="charts">
           <div className="combined-charts">
-            <div className="pie-chart">
-              <RenderPieChart />
-            </div>
-            <div className="bar-chart">
-              <RenderBarChart />
-            </div>
+            <div className="pie-chart">{RenderPieChart()}</div>
+            <div className="bar-chart">{RenderBarChart()}</div>
           </div>
-          <div className="table-chart">
-            <RenderTableChart />
-          </div>
+          <div className="table-chart">{RenderTableChart()} </div>
         </div>
       ) : null}
     </div>
   );
 };
 
-export default Dashboard;
+export default React.memo(Dashboard);

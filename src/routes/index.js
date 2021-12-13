@@ -19,11 +19,11 @@ const AppRoutes = () => {
   const dispatch = useDispatch();
 
   return (
-    <Router history={history}>
+    <Router history={history} basename="/">
       <Switch>
       <FullLayout>
         <ProtectedRoute exact path="/" component={Dashboard} />
-        <Route path="/login" exact component={Login} />
+        <Route exact path="/login" component={Login} />
 
         <Route
           exact
@@ -42,7 +42,7 @@ const AppRoutes = () => {
             );
           }}
         />
-        <Redirect to="/" />
+        <Redirect to={{pathname: "/"}} />
       </FullLayout>
       </Switch>
     </Router>
