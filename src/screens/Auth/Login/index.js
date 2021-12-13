@@ -48,7 +48,7 @@ const Login = (props) => {
   }, [loginInAction]);
 
   useEffect(() => {
-    if (localStorage.isLoggedIn==="true") props.history.push('/');
+    if (localStorage.isLoggedIn==="true") props.history.push('/dashboard');
   }, [localStorage.isLoggedIn]);
 
   const onSubmit = (event) => {

@@ -22,7 +22,7 @@ const AppRoutes = () => {
     <Router history={history} basename="/">
       <Switch>
       <FullLayout>
-        <ProtectedRoute exact path="/" component={Dashboard} />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         <Route exact path="/login" component={Login} />
 
         <Route
@@ -42,7 +42,7 @@ const AppRoutes = () => {
             );
           }}
         />
-        <Redirect to={{pathname: "/"}} />
+        <Redirect to={{pathname: "/dashboard"}} />
       </FullLayout>
       </Switch>
     </Router>
